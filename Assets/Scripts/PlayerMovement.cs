@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public Vector3 jumpVector;
+    //Elevancion del salto en grados 
+    public float jumpElevationInDegrees = 45;
+    //Velocidad de salto en metros por segundo
+    public float jumpSpeedInMps = 5;
 
     // Start is called before the first frame update
     void Start() {
@@ -13,20 +16,27 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        var camera = GetComponentInChildren<Camera>();
+
         //Dibuja una linea en la posicion del jugador
-        Debug.DrawRay(transform.position, jumpVector, Color.blue);
+        Debug.DrawRay(transform.position, camera.transform.forward, Color.blue);
 
         //Proyecta un vector sobre un plano definido por una normal ortogonal al plano
-        var projectedJumpVector = Vector3.ProjectOnPlane(jumpVector, Vector3.up);
+        var projectedLookDirection = Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up);
 
         //Dibuja una linea en la posicion del jugador
-        Debug.DrawRay(transform.position, projectedJumpVector, Color.blue);
+        Debug.DrawRay(transform.position, projectedLookDirection, Color.blue);
 
         //Rotacion de 90°
-        var radiansToRotate = Mathf.Deg2Rad * 90;
+        var radiansToRotate = Mathf.Deg2Rad * jumpElevationInDegrees;
+
         //Rota un vector hacia un objetivo
-        var rotatedJumpVector = Vector3.RotateTowards(jumpVector, Vector3.up, radiansToRotate, 0);
-        Debug.DrawRay(transform.position, rotatedJumpVector.normalized, Color.blue);
+        var unnormalizedJumpDirection = Vector3.RotateTowards(projectedLookDirection, Vector3.up, radiansToRotate, 0);
+
+        var jumpVector = unnormalizedJumpDirection.normalized * jumpSpeedInMps;
+
+        Debug.DrawRay(transform.position, jumpVector, Color.blue);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
