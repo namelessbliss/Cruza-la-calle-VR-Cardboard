@@ -6,11 +6,19 @@ public class TreeSpawner : MonoBehaviour {
 
     public GameObject treePrefab;
 
+    public int minTrees = 5;
+    public int maxTrees = 15;
+
     // Start is called before the first frame update
     void Start() {
-        CreateTree();
-        CreateTree();
-        CreateTree();
+        //canidad de arboles a generar
+        int treeQuantity = Random.Range(minTrees, maxTrees);
+        int counter = 0;
+        while (counter < treeQuantity)
+        {
+            CreateTree();
+            counter++;
+        }
     }
 
     void CreateTree() {

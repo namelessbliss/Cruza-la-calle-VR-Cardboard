@@ -7,11 +7,14 @@ public class LaneSpawner : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        CreateRandomLane(0);
-        CreateRandomLane(10);
-        CreateRandomLane(20);
-        CreateRandomLane(30);
-        CreateRandomLane(40);
+        //Distancia entre tipos de terrenos
+        int offset = 0;
+        // crear un terreno cada 10 metros
+        while (offset < 500)
+        {
+            CreateRandomLane(offset);
+            offset += 10;
+        }
     }
 
     void CreateRandomLane(float offset) {
