@@ -9,11 +9,11 @@ public class LaneSpawner : MonoBehaviour {
     void Start() {
         //Distancia entre tipos de terrenos
         int offset = 0;
-        // crear un terreno cada 10 metros
-        while (offset < 500)
+        // crear un terreno cada 1000 metros
+        while (offset < 50000)
         {
             CreateRandomLane(offset);
-            offset += 10;
+            offset += 1000;
         }
     }
 
