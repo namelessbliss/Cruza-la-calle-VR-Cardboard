@@ -15,20 +15,29 @@ public class PlayerMovement : MonoBehaviour {
     //Tolerancia de rapidez
     public float jumpSpeedTolerance = 5;
 
+    int collisionCount = 0;
+
     // Start is called before the first frame update
     void Start() {
 
     }
+    //Incrementa el valor del contador cuando se detecta colision con otro objeto
+    void OnCollisionEnter() {
+        collisionCount++;
+    }
+
+    //Disminuye valor al contador cuando salta
+    void OnCollisionExit() {
+        collisionCount--;
+    }
 
     // Update is called once per frame
     void Update() {
-        isOnGround = Physics.Raycast(transform.position, -transform.up, jumpGroundClearance);
-        Debug.DrawRay(transform.position, -transform.up * jumpGroundClearance);
+        //Debug.Log("contador " + collisionCount);
+        //0 implica que el jugador ha saltado y esta en el aire
+        isOnGround = collisionCount > 0;
 
-        var speed = GetComponent<Rigidbody>().velocity.magnitude;
-        //Si la rapidez ha disminuido significa que el jugador ha saltado y esta desacelerando
-        bool isNearStationary = speed < jumpSpeedTolerance;
-        if (GvrPointerInputModule.Pointer.TriggerDown && isOnGround && isNearStationary)
+        if (GvrPointerInputModule.Pointer.TriggerDown && isOnGround)
         {
             var camera = GetComponentInChildren<Camera>();
 
