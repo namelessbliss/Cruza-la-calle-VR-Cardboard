@@ -8,7 +8,7 @@ public class LaneSpawner : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         //Distancia entre tipos de terrenos
-        int offset = 0;
+        int offset = 1000;
         // crear un terreno cada 1000 metros
         while (offset < 50000)
         {
