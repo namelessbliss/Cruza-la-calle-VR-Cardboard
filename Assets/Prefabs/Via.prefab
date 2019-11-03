@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8977920286160295931, guid: 079175b17849e4449bdb092fe862a96c, type: 3}
-  spawnIntervalMin: 2
-  spawnIntervalMax: 6
+  minTime: 2
+  spawnMeanTime: 2
 --- !u!1 &5981944118980550674
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,5 +401,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8977920286160295931, guid: 079175b17849e4449bdb092fe862a96c, type: 3}
-  spawnIntervalMin: 2
-  spawnIntervalMax: 6
+  minTime: 2
+  spawnMeanTime: 2

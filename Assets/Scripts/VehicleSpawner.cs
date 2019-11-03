@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour {
     public GameObject prefab;
-    public float spawnIntervalMin = 2;
-    public float spawnIntervalMax = 6;
+
+    public float minTime = 2;
+
+    public float spawnMeanTime = 2;
+
     float nextSpawnTime = 0;
 
     // Start is called before the first frame update
@@ -18,7 +21,8 @@ public class VehicleSpawner : MonoBehaviour {
         if (Time.time > nextSpawnTime)
         {
             Spawn();
-            nextSpawnTime = Time.time + Random.Range(spawnIntervalMin, spawnIntervalMax);
+            // Uso de formula de los Cuantiles -ln(1-f)*media
+            nextSpawnTime = Time.time + minTime - (Mathf.Log(Random.value) * spawnMeanTime);
         }
     }
 

@@ -451,8 +451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1239571962741464048, guid: 7f160244022faa649ba15922b5b29a70, type: 3}
-  spawnIntervalMin: 2
-  spawnIntervalMax: 6
+  minTime: 2
+  spawnMeanTime: 2
 --- !u!1001 &6895279188288576901
 PrefabInstance:
   m_ObjectHideFlags: 0
