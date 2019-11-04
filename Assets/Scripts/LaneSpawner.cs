@@ -8,7 +8,7 @@ public class LaneSpawner : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         //Distancia entre tipos de terrenos
-        int offset = 1000;
+        int offset = 0;
         // crear un terreno cada 1000 metros
         while (offset < 50000)
         {
@@ -20,7 +20,7 @@ public class LaneSpawner : MonoBehaviour {
     void CreateRandomLane(float offset) {
         int laneIndex = Random.Range(0, lanePrefabs.Length);
         var lane = Instantiate(lanePrefabs[laneIndex]);
-        lane.transform.parent = transform;
+        lane.transform.SetParent(transform, false);
         lane.transform.Translate(0, 0, offset);
     }
 

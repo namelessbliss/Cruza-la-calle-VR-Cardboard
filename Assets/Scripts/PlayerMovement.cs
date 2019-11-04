@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     //Elevancion del salto en grados 
     public float jumpElevationInDegrees = 45;
     //Rapidez de salto en metros por segundo
-    public float[] jumpSpeedInMps = { 350, 700, 1000 };
+    public float[] jumpSpeedInMps = { 300, 150, 75 };
     //Estado del jugador
     bool isOnGround;
     // Distancia entre el salto y el suelo
