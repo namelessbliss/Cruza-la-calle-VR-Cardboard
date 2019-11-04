@@ -22,7 +22,7 @@ public class VehicleSpawner : MonoBehaviour {
         {
             Spawn();
             // Uso de formula de los Cuantiles -ln(1-f)*media
-            nextSpawnTime = Time.time + minTime - (Mathf.Log(Random.value) * spawnMeanTime);
+            nextSpawnTime = Time.time + minTime - Mathf.Log(Random.value) * spawnMeanTime;
         }
     }
 
