@@ -149,10 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4611382a0d67884b9332c18f60803cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanePrefabs:
+  safeLanePrefabs:
   - {fileID: 4389872829969916373, guid: c346b2415bd386f4ebfe64fa59d0c6bd, type: 3}
+  dangerousLanePrefabs:
   - {fileID: 6895279188186813549, guid: 08af3be7fcc1483469ad5cffe3c00287, type: 3}
   - {fileID: 5981944120449160769, guid: ff0ca2fbe8cb3654abf80782ca8ab8f3, type: 3}
+  safeLaneRunProbability: 0.2
 --- !u!4 &396123900
 Transform:
   m_ObjectHideFlags: 0

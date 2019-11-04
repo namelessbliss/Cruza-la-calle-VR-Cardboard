@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum LaneType { Safe, Danger }
+
 public class LaneSpawner : MonoBehaviour {
-    public GameObject[] lanePrefabs;
+    public GameObject[] safeLanePrefabs;
+    public GameObject[] dangerousLanePrefabs;
+    LaneType lastLaneType = LaneType.Safe;
+
+    public float safeLaneRunProbability = 0.2f;
 
     // Start is called before the first frame update
     void Start() {
@@ -18,10 +24,36 @@ public class LaneSpawner : MonoBehaviour {
     }
 
     void CreateRandomLane(float offset) {
-        int laneIndex = Random.Range(0, lanePrefabs.Length);
-        var lane = Instantiate(lanePrefabs[laneIndex]);
+
+        GameObject lane;
+
+        if (lastLaneType == LaneType.Safe)
+        {
+            // Probabilidad de generar otra linea segura
+            if (Random.value < safeLaneRunProbability)
+            {
+                lastLaneType = LaneType.Safe;
+                lane = InstantiateRandomLane(safeLanePrefabs);
+            }
+            else
+            {
+                lastLaneType = LaneType.Danger;
+                lane = InstantiateRandomLane(dangerousLanePrefabs);
+            }
+        }
+        else
+        {
+            lastLaneType = LaneType.Safe;
+            lane = InstantiateRandomLane(safeLanePrefabs);
+        }
+
         lane.transform.SetParent(transform, false);
         lane.transform.Translate(0, 0, offset);
+    }
+
+    GameObject InstantiateRandomLane(GameObject[] lanes) {
+        int laneIndex = Random.Range(0, lanes.Length);
+        return Instantiate(lanes[laneIndex]);
     }
 
     // Update is called once per frame
