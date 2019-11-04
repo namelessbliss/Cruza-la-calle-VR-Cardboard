@@ -68,6 +68,8 @@ public class PlayerMovement : MonoBehaviour {
 
             //Salto
             GetComponent<Rigidbody>().AddForce(jumpVector, ForceMode.VelocityChange);
+
+            hopCount++;
         }
 
     }
