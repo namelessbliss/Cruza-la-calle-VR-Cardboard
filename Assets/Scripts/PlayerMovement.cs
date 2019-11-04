@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     //Elevancion del salto en grados 
     public float jumpElevationInDegrees = 45;
     //Rapidez de salto en metros por segundo
-    public float jumpSpeedInMps = 5;
+    public float[] jumpSpeedInMps = { 350, 700, 1000 };
     //Estado del jugador
     bool isOnGround;
     // Distancia entre el salto y el suelo
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpSpeedTolerance = 5;
 
     int collisionCount = 0;
+    int hopCount = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -37,7 +38,12 @@ public class PlayerMovement : MonoBehaviour {
         //0 implica que el jugador ha saltado y esta en el aire
         isOnGround = collisionCount > 0;
 
-        if (GvrPointerInputModule.Pointer.TriggerDown && isOnGround)
+        if (isOnGround)
+        {
+            hopCount = 0;
+        }
+
+        if (GvrPointerInputModule.Pointer.TriggerDown && hopCount < jumpSpeedInMps.Length)
         {
             var camera = GetComponentInChildren<Camera>();
 
@@ -56,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
             //Rota un vector hacia un objetivo
             var unnormalizedJumpDirection = Vector3.RotateTowards(projectedLookDirection, Vector3.up, radiansToRotate, 0);
 
-            var jumpVector = unnormalizedJumpDirection.normalized * jumpSpeedInMps;
+            var jumpVector = unnormalizedJumpDirection.normalized * jumpSpeedInMps[hopCount];
 
             Debug.DrawRay(transform.position, jumpVector, Color.blue);
 

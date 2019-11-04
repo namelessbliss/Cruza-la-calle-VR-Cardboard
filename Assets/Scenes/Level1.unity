@@ -249,7 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpElevationInDegrees: 45
-  jumpSpeedInMps: 650
+  jumpSpeedInMps:
+  - 350
+  - 700
+  - 1050
   jumpGroundClearance: 100
   jumpSpeedTolerance: 5
 --- !u!1001 &962576391
@@ -806,12 +809,28 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
+      propertyPath: jumpSpeedInMps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
       propertyPath: jumpSpeedInMps
       value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
       propertyPath: jumpGroundClearance
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
+      propertyPath: jumpSpeedInMps.Array.data[0]
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
+      propertyPath: jumpSpeedInMps.Array.data[1]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 751376366, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
+      propertyPath: jumpSpeedInMps.Array.data[2]
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
