@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 751376365}
   - component: {fileID: 751376366}
   - component: {fileID: 751376367}
+  - component: {fileID: 751376368}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -272,6 +273,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UICanvas: {fileID: 1122021892}
+--- !u!114 &751376368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751376362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d6a97901a9e2348ad6a46f1795b576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921551354
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +841,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 1
+  near clip plane: 0.01
   far clip plane: 100000
   field of view: 60
   orthographic: 0
@@ -1052,6 +1065,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389872830465328748, guid: 6e62f0b335a273d4aa1288c996d65845,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.7710724
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389872830465328748, guid: 6e62f0b335a273d4aa1288c996d65845,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.34935957
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e62f0b335a273d4aa1288c996d65845, type: 3}
@@ -1557,7 +1580,7 @@ PrefabInstance:
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
       propertyPath: near clip plane
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
