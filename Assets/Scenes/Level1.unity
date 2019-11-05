@@ -154,7 +154,9 @@ MonoBehaviour:
   dangerousLanePrefabs:
   - {fileID: 6895279188186813549, guid: 08af3be7fcc1483469ad5cffe3c00287, type: 3}
   - {fileID: 5981944120449160769, guid: ff0ca2fbe8cb3654abf80782ca8ab8f3, type: 3}
+  laneSpawnDistance: 50000
   safeLaneRunProbability: 0.2
+  player: {fileID: 751376362}
 --- !u!4 &396123900
 Transform:
   m_ObjectHideFlags: 0
@@ -842,7 +844,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1605,7 +1607,7 @@ PrefabInstance:
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
       propertyPath: far clip plane
-      value: 100000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
