@@ -761,8 +761,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1366339248}
   - component: {fileID: 1366339251}
-  - component: {fileID: 1366339250}
   - component: {fileID: 1366339249}
+  - component: {fileID: 1366339250}
+  - component: {fileID: 1366339252}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -811,9 +812,8 @@ MonoBehaviour:
 --- !u!81 &1366339250
 AudioListener:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 725923431300876449, guid: a45c9b85595f9a543b07bee1d554e2c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 2123211942687249257}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366339247}
   m_Enabled: 1
@@ -861,6 +861,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1366339252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366339247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113e4aa2cd3db44d1ac0cb7e9794964b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalGainDb: 0
+  occlusionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stereoSpeakerModeEnabled: 0
+  recorderSeamless: 0
+  recorderSourceTag: Untagged
+  recorderFoldout: 0
 --- !u!1 &1369581790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1597,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 725923431300876450, guid: a45c9b85595f9a543b07bee1d554e2c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
       propertyPath: far clip plane
@@ -1587,5 +1612,6 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a45c9b85595f9a543b07bee1d554e2c8, type: 3}
