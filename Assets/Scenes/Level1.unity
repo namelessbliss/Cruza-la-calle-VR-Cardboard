@@ -1572,6 +1572,11 @@ PrefabInstance:
       propertyPath: jumpSpeedInMps.Array.data[2]
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 725923432057843525, guid: a45c9b85595f9a543b07bee1d554e2c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 725923431300876448, guid: a45c9b85595f9a543b07bee1d554e2c8,
         type: 3}
       propertyPath: far clip plane
